@@ -11,8 +11,7 @@ for (let i = 0; i < totalItems; i++) {
         let nome = leitura;
         //leitura referente a cor e tamanho do uniforme
         let arrayAux = gets().split(' ');
-
-        //armazenado listagem na ordem correta: cor, tamanho e nome
+        //armazena lista no array de objeto: cor, tamanho e nome
         listaUniforme.push({ cor: arrayAux[0], tamanho: arrayAux[1], nome: nome })
     }
 }
