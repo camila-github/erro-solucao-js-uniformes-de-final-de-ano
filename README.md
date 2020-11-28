@@ -44,7 +44,7 @@ vermelho P|
 ```javascript
 //SOLUCAO 1
 var listaUniforme = [];
-//Leitura da primeira linha, referente a quantidade das proximas entrada de dados*/
+/*Leitura da primeira linha, referente a quantidade das proximas entrada de dados*/
 let totalItems = gets();
 for (let i = 0; i < totalItems; i++) {
     /*leitura da segunda linha em diante*/
