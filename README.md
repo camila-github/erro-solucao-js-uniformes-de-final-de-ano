@@ -1,7 +1,7 @@
-## Treinamento Digital Innovation One - Exercicio - Uniformes de final de ano
+## Exercicio - Uniformes de final de ano
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Ordenação e Filtro em JavaScript.
-(https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Ordenação e Filtro em JavaScript.(https://digitalinnovation.one)
+
 
 #### Descrição do Desafio:
 
@@ -41,8 +41,43 @@ vermelho P|
 0|
 
 
+#### Update:
+08-03-2021 - Utilizando variaveis constantes (const). Ajustado nomenclatura das constantes (Uso de conceitos CleanCode). Utilizado atribuição via desestruturação (destructuring assignment).
+
+
 ```javascript
 //SOLUCAO 1
+let listaDeUniforme = [];
+/*Leitura da primeira linha(gets()), referente a quantidade das proximas entrada de dados.*/
+let quantidadeDeUniformes = gets();
+while (quantidadeDeUniformes--) {  
+  /*Leitura de entrada (gets())do nome do estudante*/
+  let nome = gets();
+  /* O if() verifica se o nome do estudante é um valor nulo*/
+  if(nome){
+    /*leitura de entrada (gets()) referente a cor e tamanho do uniforme*/
+    let [cor, tamanho] = gets().split(" ")
+    /*armazena lista no array de objeto: cor do uniforme, tamanho do uniforme e nome do estudante*/
+    listaDeUniforme.push({corUniforme: cor, tamanhoUniforme: tamanho, nomeEstudante: nome});
+  }
+}
+
+/*ordena a lista de uniformes*/ 
+function ordenarListaDeUniformes(a, b) {
+    if (a.corUniforme === b.corUniforme) {
+        if (a.tamanhoUniforme === b.tamanhoUniforme) {
+            return a.nomeEstudante < b.nomeEstudante ? -1 : a.nomeEstudante > b.nomeEstudante ? 1 : 0;
+        }
+        return a.tamanhoUniforme > b.tamanhoUniforme ? -1 : a.tamanhoUniforme < b.tamanhoUniforme ? 1 : 0;
+    }
+    return a.corUniforme < b.corUniforme ? -1 : a.corUniforme > b.corUniforme ? 1 : 0;
+}
+
+/*ordena e imprime a lista de uniformes na ordem correta*/
+listaDeUniforme.sort(ordenarListaDeUniformes).forEach(item => console.log(item.corUniforme, item.tamanhoUniforme, item.nomeEstudante));
+
+
+//SOLUCAO 2
 var listaUniforme = [];
 /*Leitura da primeira linha, referente a quantidade das proximas entrada de dados*/
 let totalItems = gets();
@@ -72,31 +107,4 @@ function ordenarLista(a, b) {
 /*ordena e imprime a lista na ordem correta*/
 listaUniforme.sort(ordenarLista);
 listaUniforme.forEach(item => console.log(item.cor, item.tamanho, item.nome));
-
-
-//SOLUCAO 2 - Resumido
-listaUniforme = [];
-/*Leitura da primeira linha, referente a quantidade das proximas entrada de dados*/
-totalItems = gets();
-while ((totalItems--)) {
-    /*O if() faz leitura da segunda linha referente o nome do aluno.Verifica se o valor é nulo*/
-    if ((nome = gets())) {
-        /*leitura referente a cor e tamanho do uniforme*/
-        arrayAux = gets().split(' ');
-        /*armazena lista no array de objeto: cor, tamanho e nome*/
-        listaUniforme.push({ cor: arrayAux[0], tamanho: arrayAux[1], nome: nome });
-    }
-}
-/*ordena a listagem*/ 
-function ordenarLista(a, b) {
-    if (a.cor === b.cor) {
-        if (a.tamanho === b.tamanho) {
-            return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
-        }
-        return a.tamanho > b.tamanho ? -1 : a.tamanho < b.tamanho ? 1 : 0;
-    }
-    return a.cor < b.cor ? -1 : a.cor > b.cor ? 1 : 0;
-}
-/*ordena e imprime a lista na ordem correta*/
-listaUniforme.sort(ordenarLista).forEach(item => console.log(item.cor, item.tamanho, item.nome));
 ```
