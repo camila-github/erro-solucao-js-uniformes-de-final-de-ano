@@ -42,7 +42,7 @@ vermelho P|
 
 
 #### Update:
-08-03-2021 - Utilizando variaveis constantes (const). Ajustado nomenclatura das constantes (Uso de conceitos CleanCode). Utilizado atribuição via desestruturação (destructuring assignment).
+13-03-2021 - Utilizando variaveis constantes (const). Ajustado nomenclatura das constantes (Uso de conceitos CleanCode). Utilizado atribuição via desestruturação (destructuring assignment).
 
 
 ```javascript
